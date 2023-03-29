@@ -4,13 +4,14 @@ import serial
 
 arduino = serial.Serial('COM4', 9600)
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0) #iniciamos la cámara predeterminada
+
 x1, x2, y1, y2 = 214, 428, 160, 320
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 while True:
-    ret, frame = cap.read() 
-    frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #Conversion de datos de colores 
+    ret, frame = cap.read() #leemos los valores de la cámara 
+    frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) # #Conversion de datos de colores 
 
     ColorMin2 = np.array([136,87,111], dtype=np.uint8)
     ColorMax2 = np.array([255,255,180], dtype=np.uint8)
